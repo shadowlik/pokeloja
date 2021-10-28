@@ -369,7 +369,7 @@ aside .poke-ads .poke-ads-description {
 
 /* Footer */
 footer {
-    padding: 30px 0;
+    padding-top: 30px;
     background: #000;
 }
 
@@ -392,9 +392,11 @@ footer .footer-nav a:hover {
 }
 
 footer .copyright {
+    background: #333;
     text-align: center;
     margin-top: 30px;
     color: #FFF;
+    padding: 20px 0;
 }
 
 footer .top-pokes {
