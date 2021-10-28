@@ -406,3 +406,23 @@ footer .top-pokes li:hover {
     color: #000;
     background: #FFF;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        display: block;
+    }
+
+    .poke-list {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    aside {
+        width: 100%;
+        flex: 1;
+        padding-left: 0;
+        margin-top: 30px;
+    }
+}
