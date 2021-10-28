@@ -132,24 +132,26 @@ header .secondary-header nav a:hover {
     color: #FFDE00;
 }
 
-header .secondary-header .social-links {
+/* Social Links - Vamos reutilizar no footer */
+
+.social-links {
     display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-header .secondary-header .social-links a {
+.social-links a {
     font-size: 20px;
     color: #FFF;
     transition: all ease-in 0.2s;
 }
 
-header .secondary-header .social-links a:hover {
+.social-links a:hover {
     color: #ab47bc;
 }
 
-header .secondary-header .social-links li {
+.social-links li {
     margin-left: 10px;
 }
 
@@ -309,6 +311,7 @@ aside .poke-ads .poke-ads-description {
     padding: 10px;
     border-bottom: solid 1px #EEE;
     transition: all ease 0.3s;
+    cursor: pointer;
 }
 
 .top-pokes li:hover {
@@ -328,10 +331,78 @@ aside .poke-ads .poke-ads-description {
     content: counter(li) "º";
     font-size: 36px;
     font-weight: bold;
-    margin-right: 8px;
     line-height: 0;
 }
 
 .top-pokes .poke-img {
     width: 50px;
+    margin: 0 8px;
+}
+
+.newsletter {
+    margin-top: 30px;
+    padding: 30px 10px;
+    background: #EEE;
+}
+
+.newsletter h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: 0;
+    width: 100%;
+}
+
+.newsletter button {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    background: #000;
+    color: #FFF;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    padding: 30px 0;
+    background: #000;
+}
+
+footer .container {
+    justify-content: space-between;
+}
+
+footer .footer-nav li {
+    margin-bottom: 10px;
+}
+
+footer .footer-nav a {
+    font-size: 20px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+footer .footer-nav a:hover {
+    color: #FFDE00;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 30px;
+    color: #FFF;
+}
+
+footer .top-pokes {
+    margin-top: 0;
+    color: #FFF;
+}
+
+footer .top-pokes li:hover {
+    color: #000;
+    background: #FFF;
 }
