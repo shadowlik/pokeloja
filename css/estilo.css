@@ -1,0 +1,284 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header .main-header {
+    background: #ff7043;
+    padding: 10px 0;
+}
+
+header .main-header .container>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .main-header .store-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+}
+
+header .main-header .search {
+    margin-left: 15px;
+}
+
+header .main-header .search-input  {
+    position: relative;
+}
+
+header .main-header .search-input button {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+}
+
+header .main-header .search-input input {
+    padding: 14px 30px 14px 15px;
+    border: 0;
+    width: 120px;
+    border-radius: 6px;
+    transition: width 0.2s ease-in;
+}
+
+header .main-header .search-input button {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: url('../images/etc/search-icon.png') no-repeat center center;
+    cursor: pointer;
+}
+
+header .main-header .search-input input:focus {
+    width: 240px;
+    outline: 3px solid #e040fb;
+}
+
+header .main-header .links {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+header .main-header .links li {
+    margin-left: 14px;
+}
+
+header .main-header .links a {
+    color: #000;
+    text-decoration: none;
+    transition: all ease 0.2s;
+}
+
+header .main-header .links a:hover {
+    color: #FFF;
+}
+
+header .secondary-header {
+    background: #000;
+    padding: 15px 0;
+}
+
+header .secondary-header nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header .secondary-header nav ul li {
+    border-right: solid 1px #EFEFEF;
+}
+
+header .secondary-header nav ul li:last-child {
+    border-right: none;
+}
+
+header .secondary-header nav a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    transition: all ease 0.2s;
+}
+
+header .secondary-header nav ul li:first-child a {
+    padding-left: 0;
+}
+
+header .secondary-header nav a:hover {
+    color: #FFDE00;
+}
+
+header .secondary-header .social-links {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header .secondary-header .social-links a {
+    font-size: 20px;
+    color: #FFF;
+    transition: all ease-in 0.2s;
+}
+
+header .secondary-header .social-links a:hover {
+    color: #ab47bc;
+}
+
+header .secondary-header .social-links li {
+    margin-left: 10px;
+}
+
+/* Content Section */
+.content-section {
+    padding: 30px 0;
+}
+
+/* Poke List */
+.poke-list {
+    width: 75%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.poke-list .poke-img {
+    max-width: 100%;
+}
+
+.poke-list .poke {
+    transition: all ease 0.3s;
+    text-align: center;
+    padding: 10px;
+    border: solid 1px #DDD;
+}
+
+.poke-list .poke:hover {
+    background: #EEE;
+}
+
+.poke-list .poke h2 {
+    margin: 10px 0;
+}
+.poke-list .poke .price-from {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #999;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.poke-list .poke .price-to {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00c853;
+    font-weight: 700;
+}
+
+.poke-list .poke-buy-btn {
+    width: 100%;
+    border: 0;
+    padding: 15px 5px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poke-list .poke-buy-btn img {
+    width: 22px;
+    margin-right: 8px;
+}
+
+@keyframes pokeBuyBtnAnimation {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.poke-list .poke:hover .poke-buy-btn {
+    animation: pokeBuyBtnAnimation 5s ease infinite;
+}
+
+
+/* Aside */
+aside {
+    padding-left: 30px;
+    width: 25%;
+}
+
+aside .poke-ads {
+    display: block;
+    height: 300px;
+    background-image: url('../images/etc/mewtwo.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+aside .poke-ads::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+aside .poke-ads>div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+aside .poke-ads .poke-ads-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+aside .poke-ads .poke-ads-description {
+    font-size: 12px;
+}
