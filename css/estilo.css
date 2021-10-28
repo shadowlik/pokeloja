@@ -407,11 +407,45 @@ footer .top-pokes li:hover {
     background: #FFF;
 }
 
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+    .poke-list {
+        width: 65%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    aside {
+        padding-left: 30px;
+        width: 35%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .container {
         width: 100%;
         padding: 0 15px;
         display: block;
+    }
+
+    header .main-header .links {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    header .secondary-header .container {
+        width: auto;
+        overflow-x: scroll;
+        display: flex;
+    }
+
+    header .secondary-header nav {
+        display: inline;
+    }
+
+    header .secondary-header nav ul li {
+        white-space: nowrap;
     }
 
     .poke-list {
