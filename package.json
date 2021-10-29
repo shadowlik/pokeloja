@@ -1,0 +1,23 @@
+{
+  "name": "pokeloja",
+  "version": "1.0.0",
+  "description": "Awari PokéLoja",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass --watch scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadowlik/pokeloja.git"
+  },
+  "author": "Henrique Marques",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shadowlik/pokeloja/issues"
+  },
+  "homepage": "https://github.com/shadowlik/pokeloja#readme",
+  "devDependencies": {
+    "sass": "^1.43.4"
+  }
+}
