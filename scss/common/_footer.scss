@@ -1,0 +1,9 @@
+
+@use '../config';
+
+// mobile
+
+// desktop
+@media screen and (max-width: config.$mobileBreakpoint) {
+    
+}

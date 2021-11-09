@@ -1,0 +1,125 @@
+
+@use '../config';
+
+header {
+    .main-header {
+        background: #ff7043;
+        padding: 10px 0;
+
+        .container>div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .store-title {
+            font-size: 34px;
+            font-weight: 900;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .search {
+            margin-left: 15px;
+        }
+
+        .search-input  {
+            position: relative;
+        }
+
+        .search-input button {
+            position: absolute;
+            right: 3px;
+            top: 3px;
+        }
+    }
+}
+
+header .main-header 
+
+header .main-header .search-input input {
+    padding: 14px 30px 14px 15px;
+    border: 0;
+    width: 120px;
+    border-radius: 6px;
+    transition: width 0.2s ease-in;
+}
+
+header .main-header .search-input button {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: url('../images/search-icon.png') no-repeat center center;
+    cursor: pointer;
+}
+
+header .main-header .search-input input:focus {
+    width: 240px;
+    outline: 3px solid #e040fb;
+}
+
+header .main-header .links {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+header .main-header .links li {
+    margin-left: 14px;
+}
+
+header .main-header .links a {
+    color: #000;
+    text-decoration: none;
+    transition: all ease 0.2s;
+}
+
+header .main-header .links a:hover {
+    color: #FFF;
+}
+
+header .secondary-header {
+    background: #000;
+    padding: 15px 0;
+}
+
+header .secondary-header nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header .secondary-header nav ul li {
+    border-right: solid 1px #EFEFEF;
+}
+
+header .secondary-header nav ul li:last-child {
+    border-right: none;
+}
+
+header .secondary-header nav a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    transition: all ease 0.2s;
+}
+
+header .secondary-header nav ul li:first-child a {
+    padding-left: 0;
+}
+
+header .secondary-header nav a:hover {
+    color: #FFDE00;
+}
+
+// desktop
+@media screen and (max-width: config.$mobileBreakpoint) {
+    
+}
