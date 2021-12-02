@@ -11,7 +11,6 @@
 
 /* Poke List */
 .poke-list {
-    width: 75%;
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -71,6 +70,18 @@
 .poke-list .poke-buy-btn img {
     width: 22px;
     margin-right: 8px;
+}
+
+.pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    button {
+        cursor: pointer;
+        padding: 10px 20px;
+        border: 0;
+        font-size: 20px;
+    }
 }
 
 @keyframes pokeBuyBtnAnimation {
