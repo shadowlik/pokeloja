@@ -1,41 +1,38 @@
 
 @use '../config';
 
-header {
-    .main-header {
-        background: #ff7043;
-        padding: 10px 0;
-
-        .container>div {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .store-title {
-            font-size: 34px;
-            font-weight: 900;
-            color: #000;
-            text-decoration: none;
-        }
-
-        .search {
-            margin-left: 15px;
-        }
-
-        .search-input  {
-            position: relative;
-        }
-
-        .search-input button {
-            position: absolute;
-            right: 3px;
-            top: 3px;
-        }
-    }
+/* Header */
+header .main-header {
+    background: #ff7043;
+    padding: 10px 0;
 }
 
-header .main-header 
+header .main-header .container>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .main-header .store-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+}
+
+header .main-header .search {
+    margin-left: 15px;
+}
+
+header .main-header .search-input  {
+    position: relative;
+}
+
+header .main-header .search-input button {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+}
 
 header .main-header .search-input input {
     padding: 14px 30px 14px 15px;
@@ -119,7 +116,83 @@ header .secondary-header nav a:hover {
     color: #FFDE00;
 }
 
-// desktop
-@media screen and (max-width: config.$mobileBreakpoint) {
-    
+/* Social Links - Vamos reutilizar no footer */
+
+.social-links {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social-links a {
+    font-size: 20px;
+    color: #FFF;
+    transition: all ease-in 0.2s;
+}
+
+.social-links a:hover {
+    color: #ab47bc;
+}
+
+.social-links li {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        display: block;
+    }
+
+    header .main-header .links {
+        margin-top: 0;
+        position: absolute;
+        right: 15px;
+        top: 25px;
+    }
+
+    header .main-header .container>div {
+        display: block;
+    }
+
+    header .main-header .search {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    header .main-header .search-input input {
+        width: 100%;
+    }
+
+    header .main-header .search-input input:focus {
+        width: 100%;
+    }
+
+    header .secondary-header .container {
+        width: auto;
+        overflow-x: scroll;
+        display: flex;
+    }
+
+    header .secondary-header nav {
+        display: inline;
+    }
+
+    header .secondary-header nav ul li {
+        white-space: nowrap;
+    }
+
+    .poke-list {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    aside {
+        width: 100%;
+        flex: 1;
+        padding-left: 0;
+        margin-top: 30px;
+    }
 }

@@ -1,1 +1,105 @@
-@use 'common/header'
+@use '_config';
+@use 'common/header';
+@use 'common/aside';
+@use 'common/footer';
+
+// index.html
+/* Content Section */
+.content-section {
+    padding: 30px 0;
+}
+
+/* Poke List */
+.poke-list {
+    width: 75%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.poke-list .poke-img {
+    max-width: 100%;
+}
+
+.poke-list .poke {
+    transition: all ease 0.3s;
+    text-align: center;
+    padding: 10px;
+    border: solid 1px #DDD;
+}
+
+.poke-list .poke:hover {
+    background: #EEE;
+}
+
+.poke-list .poke h2 {
+    margin: 10px 0;
+}
+.poke-list .poke .price-from {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #999;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.poke-list .poke .price-to {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00c853;
+    font-weight: 700;
+}
+
+.poke-list .poke-buy-btn {
+    width: 100%;
+    border: 0;
+    padding: 15px 5px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poke-list .poke-buy-btn img {
+    width: 22px;
+    margin-right: 8px;
+}
+
+@keyframes pokeBuyBtnAnimation {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.poke-list .poke:hover .poke-buy-btn {
+    animation: pokeBuyBtnAnimation 5s ease infinite;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+    .poke-list {
+        width: 65%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    aside {
+        padding-left: 30px;
+        width: 35%;
+    }
+}

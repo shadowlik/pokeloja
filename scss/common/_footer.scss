@@ -1,9 +1,44 @@
 
 @use '../config';
 
-// mobile
+/* Footer */
+footer {
+    padding-top: 30px;
+    background: #000;
+}
 
-// desktop
-@media screen and (max-width: config.$mobileBreakpoint) {
-    
+footer .container {
+    justify-content: space-between;
+}
+
+footer .footer-nav li {
+    margin-bottom: 10px;
+}
+
+footer .footer-nav a {
+    font-size: 20px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+footer .footer-nav a:hover {
+    color: #FFDE00;
+}
+
+footer .copyright {
+    background: #333;
+    text-align: center;
+    margin-top: 30px;
+    color: #FFF;
+    padding: 20px 0;
+}
+
+footer .top-pokes {
+    margin-top: 0;
+    color: #FFF;
+}
+
+footer .top-pokes li:hover {
+    color: #000;
+    background: #FFF;
 }

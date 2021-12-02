@@ -1,0 +1,126 @@
+/* Aside */
+aside {
+    padding-left: 30px;
+    width: 25%;
+}
+
+aside .poke-ads {
+    display: block;
+    height: 250px;
+    background-image: url('../images/mewtwo.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+aside .poke-ads::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+aside .poke-ads>div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+aside .poke-ads .poke-ads-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+aside .poke-ads .poke-ads-description {
+    font-size: 12px;
+}
+
+
+/* Top Pokes Component - Vamos reutilizar ele no footer */
+.top-pokes {
+    margin-top: 30px;
+}
+
+.top-pokes h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: solid 1px #DDD;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.top-pokes ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-pokes li {
+    counter-increment: li;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: solid 1px #EEE;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.top-pokes li:hover {
+    background: #EEE;
+}
+
+.top-pokes li:last-child {
+    border-bottom: 0;
+}
+
+.top-pokes span {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.top-pokes li::before {
+    content: counter(li) "º";
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+.top-pokes .poke-img {
+    width: 50px;
+    margin: 0 8px;
+}
+
+.newsletter {
+    margin-top: 30px;
+    padding: 30px 10px;
+    background: #EEE;
+}
+
+.newsletter h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: 0;
+    width: 100%;
+}
+
+.newsletter button {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    background: #000;
+    color: #FFF;
+    margin-top: 15px;
+}
