@@ -4,7 +4,6 @@ class Pokemon {
         this.url = url;
         this.id = this.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '');
         this.imagem = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${this.id}.png`;
-
         this.preco = Math.floor(Math.random() * 100);
     }
 
@@ -31,12 +30,14 @@ class Pokemon {
 }
 
 class PokeList {
+    // Limit customizável
     limit = 20;
 
+    // Variáveis que o código vai trocar sozinho
     pages = 0;
     currentPage = 0;
-    loadingHtml = '<div>Carregando Pokemons...</div>';
 
+    // Nossos elementos
     pokeList = document.querySelector('.poke-list');
     btnAnt = document.querySelector('.btn-ant');
     btnProx = document.querySelector('.btn-prox');
