@@ -2,6 +2,7 @@
 @use 'common/header';
 @use 'common/aside';
 @use 'common/footer';
+@use 'common/_pokeball_loader.scss';
 
 // index.html
 /* Content Section */
@@ -22,14 +23,27 @@ main {
     grid-auto-rows: 1fr;
     position: relative;
 
-    &.loading:before {
-        content: ' ';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        background-color: rgba(0,0,0, 0.4);
+    &.loading {
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        &:before {
+            content: ' ';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0, 0.2);
+        }
     }
     .poke-img {
         max-width: 100%;

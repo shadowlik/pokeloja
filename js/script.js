@@ -29,6 +29,8 @@ class Pokemon {
     }
 }
 
+const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 3000));
+
 class PokeList {
     // Limit customizável
     limit = 20;
@@ -63,8 +65,16 @@ class PokeList {
      */
     async getPokemons(page) {
         this.pokeList.className = 'poke-list loading'; // Adicionamos a classe de loading
+        this.pokeList.innerHTML = `
+            <div>
+                <div class="pokeball"></div>
+                <p>Carregando Pokémons...</p>
+            </div>
+        `; // Adicionamos a classe de loading
+
         window.scrollTo({top: 0, behavior: 'smooth'}); // Voltamos para o topo da página
 
+        await fakePromise(); // Promise fake para simular um carregamento mais lento
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${this.limit}&offset=${this.limit * page}`);
 
         const json = await response.json();
