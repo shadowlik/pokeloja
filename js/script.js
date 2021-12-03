@@ -63,6 +63,7 @@ class PokeList {
      */
     async getPokemons(page) {
         this.pokeList.className = 'poke-list loading'; // Adicionamos a classe de loading
+        window.scrollTo({top: 0, behavior: 'smooth'}); // Voltamos para o topo da página
 
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${this.limit}&offset=${this.limit * page}`);
 
@@ -101,8 +102,6 @@ class PokeList {
      * @param {Pokemons[]} pokemonsApi 
      */
     renderPokemons(pokemonsApi = []) {
-        window.scrollTo({top: 0, behavior: 'smooth'}); // Voltamos para o topo da página
-
         this.pokeList.innerHTML = '';
 
         const pokemons = pokemonsApi.map((pokemon) => new Pokemon(pokemon.name, pokemon.url));
