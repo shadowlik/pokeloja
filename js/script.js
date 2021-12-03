@@ -61,7 +61,7 @@ class PokeList {
      * @param {Number} page 
      */
     async getPokemons(page) {
-        this.pokeList.innerHTML = this.loadingHtml;
+        this.pokeList.className = 'poke-list loading'; // Adicionamos a classe de loading
 
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${this.limit}&offset=${this.limit * page}`);
 
@@ -100,6 +100,8 @@ class PokeList {
      * @param {Pokemons[]} pokemonsApi 
      */
     renderPokemons(pokemonsApi = []) {
+        window.scrollTo({top: 0, behavior: 'smooth'}); // Voltamos para o topo da página
+
         this.pokeList.innerHTML = '';
 
         const pokemons = pokemonsApi.map((pokemon) => new Pokemon(pokemon.name, pokemon.url));
@@ -112,6 +114,8 @@ class PokeList {
         this.pagesInfo.innerHTML = `${this.currentPage + 1}/${this.pages}`; // Exibir em qual página estamos
 
         this.toggleButtons(); // Chamamos a função para esconder ou não os botões
+
+        this.pokeList.className = 'poke-list'; // Retiramos a classe de loading
     }
 
     /**

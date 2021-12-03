@@ -10,77 +10,103 @@
 }
 
 /* Poke List */
+main {
+    width: 100%;
+}
+
 .poke-list {
+    width: 100%;
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+    grid-auto-rows: 1fr;
+    position: relative;
 
-.poke-list .poke-img {
-    max-width: 100%;
-}
+    &.loading:before {
+        content: ' ';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0, 0.4);
+    }
+    .poke-img {
+        max-width: 100%;
+    }
 
-.poke-list .poke {
-    transition: all ease 0.3s;
-    text-align: center;
-    padding: 10px;
-    border: solid 1px #DDD;
-}
+    .poke {
+        transition: all ease 0.3s;
+        text-align: center;
+        padding: 10px;
+        border: solid 1px #DDD;
+        &:hover {
+            background: #EEE;
+        }
 
-.poke-list .poke:hover {
-    background: #EEE;
-}
+        h2 {
+            margin: 10px 0;
+        }
+        
+        .price-from {
+            text-decoration: line-through;
+            font-size: 16px;
+            color: #999;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
 
-.poke-list .poke h2 {
-    margin: 10px 0;
-}
-.poke-list .poke .price-from {
-    text-decoration: line-through;
-    font-size: 16px;
-    color: #999;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
+        .price-to {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #00c853;
+            font-weight: 700;
+        }
 
-.poke-list .poke .price-to {
-    font-size: 22px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #00c853;
-    font-weight: 700;
-}
+        .poke-buy-btn {
+            width: 100%;
+            border: 0;
+            padding: 15px 5px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.poke-list .poke-buy-btn {
-    width: 100%;
-    border: 0;
-    padding: 15px 5px;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.poke-list .poke-buy-btn img {
-    width: 22px;
-    margin-right: 8px;
+        .poke-buy-btn img {
+            width: 22px;
+            margin-right: 8px;
+        }
+    }
 }
 
 .pagination {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     button {
         cursor: pointer;
         padding: 10px 20px;
         border: 0;
-        font-size: 20px;
+        font-size: 16px;
+        background-color: #BBB;
+        border-radius: 6px;
+        transition: all ease-in 0.2s;
+        &:hover {
+            background-color: #DDD;
+        }
+    }
+    #pages-info {
+        font-weight: bold;
     }
 }
 
