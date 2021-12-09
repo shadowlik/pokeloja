@@ -21,3 +21,13 @@ body, html {
     width: 1200px;
     margin: auto;
 }
+
+.error {
+    padding: 15px;
+    background-color: red;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 100%;
+}

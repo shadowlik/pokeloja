@@ -3,6 +3,7 @@
 @use 'common/aside';
 @use 'common/footer';
 @use 'common/_pokeball_loader.scss';
+@use 'common/carrinho';
 
 // index.html
 /* Content Section */
@@ -54,12 +55,17 @@ main {
         text-align: center;
         padding: 10px;
         border: solid 1px #DDD;
+        a {
+            text-decoration: none;
+            color: #000;
+        }
         &:hover {
             background: #EEE;
         }
 
         h2 {
             margin: 10px 0;
+            text-transform: capitalize;
         }
         
         .price-from {

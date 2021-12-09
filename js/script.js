@@ -11,18 +11,20 @@ class Pokemon {
         const pokeDiv = document.createElement('div');
         pokeDiv.className = 'poke';
         pokeDiv.innerHTML = `
-            <img class="poke-img"
-                        src="${this.imagem}"
-                        alt="${this.nome}">
-            <h2>${this.nome}</h2>
+            <a href="pokemon.html?id=${this.id}">
+                <img class="poke-img"
+                src="${this.imagem}"
+                alt="${this.nome}">
+                <h2>${this.nome}</h2>
 
-            <p class="price-from">R$ ${this.preco}</p>
-            <p class="price-to">R$ ${(this.preco * 0.8).toFixed(2)}</p>
+                <p class="price-from">R$ ${this.preco}</p>
+                <p class="price-to">R$ ${(this.preco * 0.8).toFixed(2)}</p>
 
-            <button class="poke-buy-btn">
-                <img src="images/pokeball.png" alt="Pokeball">
-                <span>Comprar</span>
-            </button>
+                <button class="poke-buy-btn">
+                    <img src="images/pokeball.png" alt="Pokeball">
+                    <span>Comprar</span>
+                </button>
+            </a>
         `;
 
         return pokeDiv;
@@ -135,10 +137,13 @@ class PokeList {
         this.currentPage === 0 ? this.btnAnt.style.visibility = 'hidden' : this.btnAnt.style.visibility = 'visible';
         this.currentPage + 1 === this.pages ? this.btnProx.style.visibility = 'hidden' :  this.btnProx.style.visibility = 'visible';
     }
+    
 }
 
 
 // Executa quando a página termina de carregar
 window.onload = async () => {
     new PokeList();
+
+    if(window.Carrinho) Carrinho();
 }

@@ -1,0 +1,10 @@
+@use '_config';
+@use 'common/header';
+@use 'common/aside';
+@use 'common/footer';
+@use 'common/_pokeball_loader.scss';
+@use 'common/carrinho';
+
+main {
+    width: 75%;
+}
