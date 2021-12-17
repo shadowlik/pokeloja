@@ -20,7 +20,7 @@ class Pokemon {
                 <p class="price-from">R$ ${this.preco}</p>
                 <p class="price-to">R$ ${(this.preco * 0.8).toFixed(2)}</p>
 
-                <button class="poke-buy-btn">
+                <button data-id="${this.id}" class="poke-buy-btn">
                     <img src="images/pokeball.png" alt="Pokeball">
                     <span>Comprar</span>
                 </button>
@@ -31,7 +31,7 @@ class Pokemon {
     }
 }
 
-const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 3000));
+const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 0));
 
 class PokeList {
     // Limit customizável
@@ -40,6 +40,7 @@ class PokeList {
     // Variáveis que o código vai trocar sozinho
     pages = 0;
     currentPage = 0;
+    pokemons = [];
 
     // Nossos elementos
     pokeList = document.querySelector('.poke-list');
@@ -118,6 +119,8 @@ class PokeList {
 
         const pokemons = pokemonsApi.map((pokemon) => new Pokemon(pokemon.name, pokemon.url));
 
+        this.pokemons = pokemons;
+
         pokemons.forEach((pokemon) => {
             const html = pokemon.html();
             this.pokeList.appendChild(html)
@@ -128,6 +131,19 @@ class PokeList {
         this.toggleButtons(); // Chamamos a função para esconder ou não os botões
 
         this.pokeList.className = 'poke-list'; // Retiramos a classe de loading
+
+        // Adicionar click nos botões de comprar
+        const botoesCompra = document.querySelectorAll('.poke-buy-btn');
+
+        botoesCompra.forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const id = event.target.getAttribute('data-id');
+
+                const pokemon = this.pokemons.find((pokemon) => pokemon.id == id);
+                window.carrinho.adicionar(pokemon);
+            });
+        });
     }
 
     /**
@@ -137,13 +153,11 @@ class PokeList {
         this.currentPage === 0 ? this.btnAnt.style.visibility = 'hidden' : this.btnAnt.style.visibility = 'visible';
         this.currentPage + 1 === this.pages ? this.btnProx.style.visibility = 'hidden' :  this.btnProx.style.visibility = 'visible';
     }
-    
+
 }
 
 
 // Executa quando a página termina de carregar
 window.onload = async () => {
     new PokeList();
-
-    if(window.Carrinho) Carrinho();
 }
